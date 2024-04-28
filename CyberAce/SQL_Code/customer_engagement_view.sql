@@ -1,0 +1,1 @@
+CREATE VIEW customer_engagements as SELECT customer_id, serv_name, customer_name, company_address, industry, begin_date, end_date FROM customers JOIN engagements ON customers.customer_id = engagements.eng_customer JOIN services ON engagements.service_id = services.service_id;

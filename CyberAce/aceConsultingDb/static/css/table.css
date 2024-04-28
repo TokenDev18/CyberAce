@@ -1,0 +1,21 @@
+/* static/css/table.css */
+
+
+table, th, td {
+    border: 1px solid;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+table {
+    width: 900px;
+    vertical-align: middle;
+}
+
+th {
+    background-color: purple;
+    color: white;
+}
+
+th, td {
+    text-align: center;
+}

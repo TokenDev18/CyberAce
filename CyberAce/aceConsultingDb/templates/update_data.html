@@ -1,0 +1,25 @@
+<!-- temppates/update_data.html-->
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+<link href="{% static 'css/base.css' %}" rel="stylesheet">
+<h2 class="update_h2">Update Existing Items</h2>
+
+<form id="choiceselect_form" method="GET">
+    {{ update_form|crispy }}
+    <div class="btn-group btn-group-justified" role="group">
+      <div class="btn-group" role="group">
+        <button class="btn btn-primary" type="submit">Get Row</button>
+      </div>
+    </div>
+</form>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ table_form|crispy}}
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+
+{% endblock content %}

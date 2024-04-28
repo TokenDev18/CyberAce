@@ -1,0 +1,147 @@
+<!-- temppates/select_data.html-->
+
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<link href="{% static 'css/base.css' %}" rel="stylesheet">
+<link href="{% static 'css/table.css' %}" rel="stylesheet">
+<h2 class="select_h2">Select DB Items</h2>
+
+<form id="select_form" method="GET">
+    {{ choice_form|crispy }}
+    </table>
+    <div class="btn-group btn-group-justified" role="group">
+      <div class="btn-group" role="group">
+        <button class="btn btn-primary" type="submit">Get Data</button>
+      </div>
+    </div>
+    {% if customers %}    
+    <table>
+        <tr>
+            <th>Customer Name</th>
+            <th>Phone Number</th>
+            <th>Company Address</th>
+        </tr>
+        {% for customer in customers %}
+        <tr>
+            <td>{{ customer.customer_name }}</td>
+            <td>{{ customer.phone_number }}</td>
+            <td>{{ customer.company_address }}</td>
+            <br>  
+        </tr>
+        {% endfor %}
+    </table>
+    {% elif employees %}
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Title</th>
+            <th>Specialization</th>
+            <th>Date Hired</th>
+        </tr>
+        {% for employee in employees %}
+        <tr>
+            <td>{{ employee.first_name }}</td>
+            <td>{{ employee.last_name }}</td>
+            <td>{{ employee.job_title }}</td>
+            <td>{{ employee.specialization }}</td>
+            <td>{{ employee.date_hired }}</td>
+            <br>  
+        </tr>
+        {% endfor %}
+    </table>
+    {% elif engagements %}
+    <table>
+        <tr>
+            <th>Engagement ID</th>
+            <th>Serivce ID</th>
+            <th>Begin Date</th>
+            <th>End Date</th>
+        </tr>
+        {% for engagement in engagements %}
+        <tr>
+            <td>{{ engagement.engagement_id }}</td>
+            <td>{{ engagement.service_id }}</td>
+            <td>{{ engagement.begin_date }}</td>
+            <td>{{ engagement.end_date }}</td>
+            <br>  
+        </tr>
+        {% endfor %}
+    </table>
+    {% elif payroll %}
+    <table>
+        <tr>
+            <th>Payroll ID</th>
+            <th>Employee ID</th>
+            <th>Salary</th>
+        </tr>
+        {% for pay in payroll %}
+        <tr>
+            <td>{{ pay.payroll_id }}</td>
+            <td>{{ pay.pay_employee }}</td>
+            <td>{{ pay.salary }}</td>
+            <br>  
+        </tr>
+        {% endfor %}
+    </table>
+    {% elif requests %}
+    <table>
+        <tr>
+            <th>Request ID</th>
+            <th>Customer Request</th>
+            <th>Date Requested</th>
+    
+        </tr>
+        {% for request in requests %}
+        <tr>
+            <td>{{ request.request_id }}</td>
+            <td>{{ request.customer_req }}</td>
+            <td>{{ request.date_requested }}</td> 
+            <br>  
+        </tr>
+        {% endfor %}
+    </table>
+    {% elif services %}
+    <table>
+        <tr>
+            <th>Service ID</th>
+            <th>Service Name</th>
+            <th>Serivce SLA</th>
+            <th>Date Added</th>
+    
+        </tr>
+        {% for service in services %}
+        <tr>
+            <td>{{ service.service_id }}</td>
+            <td>{{ service.serv_name }}</td>
+            <td>{{ service.service_sla }}</td>
+            <td>{{ service.date_added }}</td>
+            <br>  
+        </tr>
+        {% endfor %}
+    </table>
+    {% elif vulnerabilities %}
+    <table>
+        <tr>
+            <th>Vuln ID</th>
+            <th>Vuln Description</th>
+            <th>Date Found</th>
+            <th>Severity</th>
+    
+        </tr>
+        {% for vuln in vulnerabilities %}
+        <tr>
+            <td>{{ vuln.vuln_id}}</td>
+            <td>{{ vuln.vuln_description }}</td>
+            <td>{{ vuln.date_found }}</td>
+            <td>{{ vuln.severity }}</td>
+            <br>  
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</form>
+{% endblock content %}

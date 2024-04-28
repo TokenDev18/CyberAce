@@ -1,0 +1,24 @@
+/* static/css/base.css */
+
+h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: purple;
+    text-align: center;
+}
+
+.select_p {
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: purple;
+    text-align: center;
+}
+
+.card-body h3 {
+    text-align: center;
+}
+
+.welcome {
+    text-align: center;
+    color: white;
+    background-color: purple;
+}

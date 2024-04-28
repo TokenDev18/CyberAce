@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+<link href="{% static 'css/base.css' %}" rel="stylesheet">
+<link href="{% static 'css/table.css' %}" rel="stylesheet">
+<h2 class="reports_h2">Reporting</h2>
+
+<table>
+    <tr>
+        <th>Number of Customers</th>
+    </tr>
+    <tr>
+        <td>{{ customer_count }}</td>
+        <br>  
+    </tr>
+</table>
+<br>
+<br>
+<table>
+    <tr>
+        <th>Number of Engagements</th>
+    </tr>
+    <tr>
+        <td>{{ engagement_count }}</td>
+        <br>  
+    </tr>
+</table>
+<br>
+<br>
+<table>
+    <tr>
+        <th>Number of Employees</th>
+        <th>Max Salary</th>
+        <th>Min Salary</th>
+        <th>Average Salary</th>
+        
+    </tr>
+    <tr>
+        <td>{{ employee_count }}</td>
+        <td>{{ max_employee_salary }}</td>
+        <td>{{ min_employee_salary }}</td>
+        <td>{{ employee_salary }}</td>
+        <br>  
+    </tr>
+</table>
+<br>
+<br>
+<table>
+    <tr>
+        <th>Number of Services</th>
+        <th>Max Service SLA</th>
+        <th>Min Service SLA</th>
+        <th>Average Service SLA</th>
+    </tr>
+    <tr>
+        <td>{{ service_count }}</td>
+        <td>{{ max_sla }}</td>
+        <td>{{ min_sla }}</td>
+        <td>{{ avg_sla }}</td>
+        <br>  
+    </tr>
+</table>
+
+{% endblock content %}

@@ -1,0 +1,24 @@
+<!-- templates/insert_data.html -->
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+<link href="{% static 'css/base.css' %}" rel="stylesheet">
+<h2 class="insert_h2">Insert New Items</h2>
+
+<form id="insertselect_form" method="GET">
+    {{ choice_form|crispy }}
+    <div class="btn-group btn-group-justified" role="group">
+      <div class="btn-group" role="group">
+        <button class="btn btn-primary" type="submit">Select Table</button>
+      </div>
+    </div>
+  </form>
+
+  <form action="" method="POST">
+    {% csrf_token %}
+    {{ table_form|crispy }}
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+{% endblock content %}

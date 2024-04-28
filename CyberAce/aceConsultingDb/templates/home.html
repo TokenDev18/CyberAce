@@ -1,0 +1,29 @@
+<!-- templates/home.html -->
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link href="{% static 'css/base.css' %}" rel="stylesheet">
+    <div class="welcome">
+        <h1>Welcome to CyberAce Security</h1>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h3>Thanks for landing on this page to know more about CyberAce Security</h3>
+            <br>
+            <h6>CyberAce Security we pride ourselve on providing honest, accurate, and timely service for our customers. Below is a complete list of services we provide our customers.</h6>
+            <br>
+            <h6><strong>Security Services:</strong></h6>
+            <ol>
+                <li>Web Application Pentesting</li>
+                <li>Network Pentesting</li>
+                <li>Red Teaming</li>
+                <li>Incident Response</li>
+                <li>Malware Analysis</li>
+                <li>Vulnerability Testing</li>
+            </ol>
+            <h3>If you are interested in using us for any of the services listed above, send an email to email@cyberacesecurity.com</h3>
+        </div>
+    </div>
+{% endblock content %}

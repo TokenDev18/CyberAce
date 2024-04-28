@@ -1,0 +1,1 @@
+CREATE VIEW employee_payroll as SELECT employees.employee_id, job_title, employees.specialization, salary FROM employees JOIN payroll ON employees.employee_id = payroll.pay_employee;
